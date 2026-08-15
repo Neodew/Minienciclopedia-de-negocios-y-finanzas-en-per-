@@ -1,0 +1,3180 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enciclopedia Suprema de Negocios y Finanzas — guía integral para emprendedores, CEOs, CFOs, inversionistas y directores en el contexto peruano.">
+  <meta name="theme-color" content="#07111f">
+  <title>Enciclopedia Suprema de Negocios y Finanzas</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1728;
+      --panel: #0e1d31;
+      --panel-2: #12243b;
+      --gold: #d6ad55;
+      --gold-light: #f1d98b;
+      --white: #f8fafc;
+      --muted: #9cafc4;
+      --text: #dbe6f2;
+      --green: #32c48d;
+      --red: #ef6b73;
+      --blue: #4ca3ff;
+      --border: rgba(255,255,255,.09);
+      --shadow: 0 20px 60px rgba(0,0,0,.25);
+      --radius: 18px;
+      --max: 1440px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(214,173,85,.10), transparent 30%),
+        radial-gradient(circle at 10% 30%, rgba(76,163,255,.07), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 72px;
+      background: rgba(7,17,31,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: var(--max);
+      height: 100%;
+      margin: auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(214,173,85,.6);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-weight: 900;
+      background: linear-gradient(145deg, #172b45, #0b1626);
+      box-shadow: 0 0 30px rgba(214,173,85,.08);
+    }
+
+    .brand strong {
+      font-size: .88rem;
+      letter-spacing: .05em;
+      color: var(--white);
+    }
+
+    .brand span {
+      display: block;
+      font-size: .65rem;
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 9px;
+      color: var(--muted);
+      font-size: .82rem;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+      background: rgba(255,255,255,.05);
+    }
+
+    .nav-button {
+      border: 1px solid rgba(214,173,85,.35);
+      color: var(--gold-light) !important;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: white;
+      padding: 7px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 760px;
+      padding: 160px 28px 90px;
+      max-width: var(--max);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(214,173,85,.25);
+      color: var(--gold-light);
+      background: rgba(214,173,85,.06);
+      padding: 7px 13px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .68rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 6vw, 6.4rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      color: var(--gold-light);
+      font-style: normal;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: .86rem;
+      font-weight: 750;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #111;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.035);
+      color: var(--white);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015)),
+        var(--panel);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(214,173,85,.12);
+      filter: blur(50px);
+      top: -100px;
+      right: -80px;
+    }
+
+    .hero-card-title {
+      position: relative;
+      font-family: Georgia, serif;
+      font-size: 1.45rem;
+      color: white;
+      margin-bottom: 22px;
+    }
+
+    .metric-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(0,0,0,.12);
+    }
+
+    .metric-value {
+      color: var(--gold-light);
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: .72rem;
+      margin-top: 3px;
+    }
+
+    .ticker {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      background: rgba(255,255,255,.018);
+    }
+
+    .ticker-track {
+      max-width: var(--max);
+      margin: auto;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      color: var(--muted);
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .ticker-track b {
+      color: var(--gold-light);
+    }
+
+    .layout {
+      max-width: var(--max);
+      margin: auto;
+      padding: 70px 28px 100px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 45px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 95px;
+      align-self: start;
+      max-height: calc(100vh - 115px);
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .sidebar-title {
+      color: var(--white);
+      font-size: .74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 14px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      color: white;
+      border-radius: 9px;
+      outline: none;
+      margin-bottom: 16px;
+    }
+
+    .search:focus {
+      border-color: rgba(214,173,85,.5);
+    }
+
+    .toc {
+      list-style: none;
+    }
+
+    .toc li a {
+      display: block;
+      padding: 7px 9px;
+      border-left: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+      transition: .2s;
+    }
+
+    .toc li a:hover,
+    .toc li a.active {
+      color: var(--gold-light);
+      border-left-color: var(--gold);
+      background: rgba(214,173,85,.045);
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: 85px;
+      scroll-margin-top: 100px;
+    }
+
+    .section-number {
+      color: var(--gold);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      color: var(--white);
+      font-size: clamp(2rem, 3.5vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      color: var(--white);
+      font-size: 1.18rem;
+      margin: 32px 0 12px;
+    }
+
+    h4 {
+      color: var(--gold-light);
+      margin: 22px 0 8px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 850px;
+    }
+
+    .gold {
+      color: var(--gold-light);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .info-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+      padding: 22px;
+      border-radius: var(--radius);
+    }
+
+    .info-card .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: rgba(214,173,85,.09);
+      color: var(--gold-light);
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .info-card h3 {
+      margin: 0 0 7px;
+      font-size: 1rem;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: .82rem;
+      margin: 0;
+    }
+
+    .formula {
+      padding: 20px 22px;
+      border: 1px solid rgba(214,173,85,.22);
+      background: rgba(214,173,85,.045);
+      border-radius: 13px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    .formula strong {
+      color: var(--gold-light);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 1rem;
+    }
+
+    .callout {
+      margin: 25px 0;
+      padding: 22px 24px;
+      border-left: 3px solid var(--gold);
+      background: rgba(214,173,85,.045);
+      border-radius: 0 13px 13px 0;
+    }
+
+    .callout strong {
+      color: var(--gold-light);
+    }
+
+    .danger {
+      border-left-color: var(--red);
+      background: rgba(239,107,115,.04);
+    }
+
+    .success {
+      border-left-color: var(--green);
+      background: rgba(50,196,141,.04);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 22px 0;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: .82rem;
+    }
+
+    th {
+      background: rgba(255,255,255,.045);
+      color: var(--gold-light);
+      font-weight: 800;
+    }
+
+    td {
+      color: var(--text);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 25px 0;
+    }
+
+    .flow-item {
+      padding: 9px 13px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: .76rem;
+    }
+
+    .flow-arrow {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .number-list {
+      counter-reset: item;
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .number-list li {
+      counter-increment: item;
+      position: relative;
+      padding: 12px 15px 12px 48px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .number-list li::before {
+      content: counter(item, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 11px;
+      color: var(--gold);
+      font-family: monospace;
+      font-weight: 800;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 18px 0;
+    }
+
+    .checklist li {
+      padding: 9px 0 9px 27px;
+      position: relative;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .dash-card {
+      padding: 18px;
+      border-radius: 13px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+    }
+
+    .dash-label {
+      color: var(--muted);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .dash-number {
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 4px 0;
+    }
+
+    .status {
+      font-size: .68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .status.green { color: var(--green); }
+    .status.yellow { color: #e8bf58; }
+    .status.red { color: var(--red); }
+
+    .timeline {
+      position: relative;
+      margin: 30px 0;
+      padding-left: 30px;
+      border-left: 1px solid rgba(214,173,85,.35);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -36px;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(214,173,85,.09);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 5px;
+      color: var(--gold-light);
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .gold-rules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .rule {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 18px;
+      background: var(--panel);
+    }
+
+    .rule-number {
+      color: var(--gold);
+      font-family: monospace;
+      font-weight: 900;
+    }
+
+    .rule h3 {
+      margin: 5px 0 5px;
+      font-size: .96rem;
+    }
+
+    .rule p {
+      margin: 0;
+      font-size: .79rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      background: #050d18;
+      padding: 70px 28px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer h3 {
+      margin: 0 0 12px;
+      font-family: Georgia, serif;
+    }
+
+    .footer p,
+    .footer li {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer li {
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      max-width: var(--max);
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #66788d;
+      font-size: .7rem;
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--gold-light);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      z-index: 900;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 1050px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: auto;
+        max-height: none;
+      }
+
+      .toc {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 12px 20px 20px;
+        background: rgba(7,17,31,.97);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .metric-grid,
+      .info-grid,
+      .dashboard,
+      .gold-rules,
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVEGACIÓN
+  ========================== -->
+
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <div class="brand-mark">Σ</div>
+        <div>
+          <strong>ENCICLOPEDIA SUPREMA</strong>
+          <span>Negocios & Finanzas</span>
+        </div>
+      </a>
+
+```
+  <div class="nav-links" id="navLinks">
+    <a href="#enciclopedia">Enciclopedia</a>
+    <a href="#empresa-x">Empresa X</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#reglas">25 reglas</a>
+    <a class="nav-button" href="#ceo">Plan CEO</a>
+  </div>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+    ☰
+  </button>
+</nav>
+```
+
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main id="inicio">
+
+```
+<section class="hero">
+
+  <div>
+    <div class="eyebrow">Edición Perú · 2026</div>
+
+    <h1>
+      Aprende a pensar como
+      <em>CEO, CFO e inversionista.</em>
+    </h1>
+
+    <p class="hero-copy">
+      Una guía maestra para comprender cómo funciona una empresa:
+      desde su constitución y operación diaria hasta su financiamiento,
+      valorización, gobierno corporativo, M&A y eventual acceso al
+      mercado de capitales.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#enciclopedia" class="btn btn-primary">
+        Explorar la enciclopedia →
+      </a>
+
+      <a href="#empresa-x" class="btn btn-secondary">
+        Ver caso Empresa X
+      </a>
+    </div>
+  </div>
+
+  <aside class="hero-card">
+    <div class="hero-card-title">
+      El sistema operativo de una empresa
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="metric-value">31</div>
+        <div class="metric-label">Bloques de conocimiento</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-value">∞</div>
+        <div class="metric-label">Decisiones empresariales</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-value">S/</div>
+        <div class="metric-label">Contexto financiero peruano</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-value">360°</div>
+        <div class="metric-label">Visión empresarial</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-bottom:0;margin-top:18px;">
+      <strong>Principio:</strong>
+      ventas + margen + caja + personas + riesgo + cumplimiento
+      + gobierno = empresa sostenible.
+    </div>
+  </aside>
+
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span><b>VENTAS</b> → MARGEN</span>
+    <span><b>EBITDA</b> → CAJA</span>
+    <span><b>RIESGO</b> → CONTROL</span>
+    <span><b>CAPITAL</b> → CRECIMIENTO</span>
+    <span><b>VALOR</b> → ACCIONISTA</span>
+  </div>
+</div>
+
+<!-- =========================
+     CONTENIDO PRINCIPAL
+========================== -->
+
+<div class="layout" id="enciclopedia">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div class="sidebar-title">Índice maestro</div>
+
+    <input
+      class="search"
+      id="searchInput"
+      type="search"
+      placeholder="Buscar bloque..."
+      aria-label="Buscar en el índice"
+    >
+
+    <ul class="toc" id="toc">
+
+      <li><a href="#b1">01 · Constitución</a></li>
+      <li><a href="#b2">02 · Gobierno corporativo</a></li>
+      <li><a href="#b3">03 · Macroeconomía</a></li>
+      <li><a href="#b4">04 · Estrategia</a></li>
+      <li><a href="#b5">05 · Ventas & pricing</a></li>
+      <li><a href="#b6">06 · Contabilidad</a></li>
+      <li><a href="#b7">07 · Finanzas</a></li>
+      <li><a href="#b8">08 · Capital de trabajo</a></li>
+      <li><a href="#b9">09 · Presupuestos</a></li>
+      <li><a href="#b10">10 · Supply Chain</a></li>
+      <li><a href="#b11">11 · Comercio exterior</a></li>
+      <li><a href="#b12">12 · RR. HH.</a></li>
+      <li><a href="#b13">13 · Tributación</a></li>
+      <li><a href="#b14">14 · Auditoría</a></li>
+      <li><a href="#b15">15 · Riesgos</a></li>
+      <li><a href="#b16">16 · Gestión pública</a></li>
+      <li><a href="#b17">17 · Tecnología</a></li>
+      <li><a href="#b18">18 · Banca</a></li>
+      <li><a href="#b19">19 · Indicadores</a></li>
+      <li><a href="#b20">20 · Inversiones</a></li>
+      <li><a href="#b21">21 · WACC</a></li>
+      <li><a href="#b22">22 · Mercado de capitales</a></li>
+      <li><a href="#b23">23 · Valorización</a></li>
+      <li><a href="#b24">24 · Startups & VC</a></li>
+      <li><a href="#b25">25 · M&A</a></li>
+      <li><a href="#b26">26 · Contratos</a></li>
+      <li><a href="#b27">27 · Internacionalización</a></li>
+      <li><a href="#empresa-x">28 · Caso Empresa X</a></li>
+      <li><a href="#dashboard">29 · Dashboard CEO/CFO</a></li>
+      <li><a href="#cumplimiento">30 · Cumplimiento</a></li>
+      <li><a href="#reglas">31 · 25 reglas de oro</a></li>
+      <li><a href="#ceo">Plan CEO</a></li>
+
+    </ul>
+  </aside>
+
+  <!-- CONTENIDO -->
+
+  <article class="content">
+
+    <!-- INTRO -->
+
+    <section class="section">
+      <div class="section-number">La visión</div>
+
+      <h2>Una empresa no es solamente una máquina de vender.</h2>
+
+      <p class="lead">
+        Es un sistema interconectado de estrategia, clientes, operaciones,
+        personas, capital, tecnología, impuestos, riesgos y gobierno.
+      </p>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <div class="icon">01</div>
+          <h3>Dueño</h3>
+          <p>
+            Piensa en patrimonio, retorno, riesgo, crecimiento y
+            continuidad.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">02</div>
+          <h3>CEO</h3>
+          <p>
+            Convierte estrategia en ejecución, resultados y organización.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">03</div>
+          <h3>CFO</h3>
+          <p>
+            Conecta rentabilidad, caja, capital, riesgo y creación de valor.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">04</div>
+          <h3>Inversionista</h3>
+          <p>
+            Analiza retorno, riesgo, valoración y capacidad futura de generar
+            efectivo.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">05</div>
+          <h3>Directorio</h3>
+          <p>
+            Supervisa dirección estratégica, riesgos, gobierno y resultados.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">06</div>
+          <h3>Controller</h3>
+          <p>
+            Asegura calidad de información, controles y disciplina financiera.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="flow">
+        <span class="flow-item">Idea</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Empresa</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Ventas</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Margen</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Caja</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Capital</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Crecimiento</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Valor</span>
+      </div>
+    </section>
+
+
+    <!-- B1 -->
+
+    <section class="section" id="b1">
+
+      <div class="section-number">Bloque 01</div>
+      <h2>Constitución, tipos de empresa e identidad legal</h2>
+
+      <p class="lead">
+        La estructura legal determina cómo se organiza la propiedad,
+        responsabilidad, administración y crecimiento de la empresa.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>EIRL</th>
+              <th>SRL</th>
+              <th>SAC</th>
+              <th>SA</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Propietarios</td>
+              <td>1</td>
+              <td>2–20 aprox.</td>
+              <td>2–20</td>
+              <td>2 o más</td>
+            </tr>
+            <tr>
+              <td>Participación</td>
+              <td>Titular</td>
+              <td>Participaciones</td>
+              <td>Acciones</td>
+              <td>Acciones</td>
+            </tr>
+            <tr>
+              <td>Directorio</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No obligatorio</td>
+              <td>Sí</td>
+            </tr>
+            <tr>
+              <td>Complejidad</td>
+              <td>Baja</td>
+              <td>Media</td>
+              <td>Media</td>
+              <td>Alta</td>
+            </tr>
+            <tr>
+              <td>Escalabilidad</td>
+              <td>Media</td>
+              <td>Media</td>
+              <td>Alta</td>
+              <td>Muy alta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ruta básica</h3>
+
+      <div class="flow">
+        <span class="flow-item">Nombre</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Constitución</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">SUNARP</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">RUC</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Clave SOL</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Banco</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Operación</span>
+      </div>
+
+      <div class="callout">
+        <strong>Perspectiva CFO:</strong>
+        no elijas una forma societaria únicamente por facilidad de apertura.
+        Pregunta también cómo funcionará la propiedad cuando lleguen deuda,
+        nuevos socios, inversionistas o una venta.
+      </div>
+
+    </section>
+
+
+    <!-- B2 -->
+
+    <section class="section" id="b2">
+
+      <div class="section-number">Bloque 02</div>
+      <h2>Derecho societario y gobierno corporativo</h2>
+
+      <p class="lead">
+        El gobierno corporativo establece quién decide, quién ejecuta,
+        quién controla y quién responde.
+      </p>
+
+      <div class="flow">
+        <span class="flow-item">Accionistas</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Junta</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Directorio</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Gerencia</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Operación</span>
+      </div>
+
+      <h3>Caso 50% / 30% / 20%</h3>
+
+      <p>
+        Tener 50% no significa automáticamente poder aprobar cualquier
+        decisión. Deben revisarse quórums, mayorías, estatuto, ley aplicable,
+        pactos y materias especiales.
+      </p>
+
+      <div class="callout danger">
+        <strong>Error frecuente:</strong>
+        entregar poderes bancarios amplios sin límites, controles ni
+        segregación de funciones.
+      </div>
+
+      <ul class="checklist">
+        <li>Estatuto actualizado.</li>
+        <li>Poderes vigentes.</li>
+        <li>Actas correctamente documentadas.</li>
+        <li>Matriz de autorizaciones.</li>
+        <li>Segregación de funciones.</li>
+        <li>Política de conflictos de interés.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- B3 -->
+
+    <section class="section" id="b3">
+
+      <div class="section-number">Bloque 03</div>
+      <h2>Macroeconomía y microeconomía aplicada</h2>
+
+      <p class="lead">
+        El empresario debe entender inflación, tipo de cambio, tasas,
+        demanda y competencia porque afectan directamente precios, costos,
+        inversión y caja.
+      </p>
+
+      <div class="formula">
+        <strong>Costo en soles = monto US$ × tipo de cambio</strong>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Escenario</th>
+              <th>US$</th>
+              <th>TC</th>
+              <th>Costo S/</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Base</td>
+              <td>100,000</td>
+              <td>3.70</td>
+              <td>S/370,000</td>
+            </tr>
+            <tr>
+              <td>Dólar alto</td>
+              <td>100,000</td>
+              <td>4.00</td>
+              <td>S/400,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Impacto:</strong>
+        un aumento del tipo de cambio de S/3.70 a S/4.00 genera
+        S/30,000 adicionales de costo sobre una importación de US$100,000.
+      </div>
+
+    </section>
+
+
+    <!-- B4 -->
+
+    <section class="section" id="b4">
+
+      <div class="section-number">Bloque 04</div>
+      <h2>Estrategia empresarial y modelo de negocio</h2>
+
+      <div class="flow">
+        <span class="flow-item">Mercado</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Cliente</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Problema</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Propuesta</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Modelo económico</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Resultado</span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>FODA</h3>
+          <p>Fortalezas, oportunidades, debilidades y amenazas.</p>
+        </div>
+        <div class="info-card">
+          <h3>PESTEL</h3>
+          <p>Entorno político, económico, social, tecnológico, ambiental y legal.</p>
+        </div>
+        <div class="info-card">
+          <h3>Porter</h3>
+          <p>Evalúa la estructura competitiva de la industria.</p>
+        </div>
+        <div class="info-card">
+          <h3>Canvas</h3>
+          <p>Visualiza clientes, propuesta, canales, recursos y economía.</p>
+        </div>
+        <div class="info-card">
+          <h3>OKR</h3>
+          <p>Conecta objetivos ambiciosos con resultados medibles.</p>
+        </div>
+        <div class="info-card">
+          <h3>Balanced Scorecard</h3>
+          <p>Integra estrategia, clientes, procesos y capacidades.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- B5 -->
+
+    <section class="section" id="b5">
+
+      <div class="section-number">Bloque 05</div>
+      <h2>Ventas, marketing, pricing y unit economics</h2>
+
+      <p class="lead">
+        La máquina comercial transforma atención en oportunidades y
+        oportunidades en ingresos.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Etapa</th>
+              <th>Volumen</th>
+              <th>Conversión</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Impresiones</td>
+              <td>5,000</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Clics</td>
+              <td>500</td>
+              <td>10%</td>
+            </tr>
+            <tr>
+              <td>Leads</td>
+              <td>100</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>Oportunidades</td>
+              <td>30</td>
+              <td>30%</td>
+            </tr>
+            <tr>
+              <td>Propuestas</td>
+              <td>15</td>
+              <td>50%</td>
+            </tr>
+            <tr>
+              <td>Ventas</td>
+              <td>6</td>
+              <td>40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">
+        <strong>CAC = gasto comercial y marketing / nuevos clientes</strong>
+      </div>
+
+      <div class="formula">
+        <strong>Markup = (Precio − Costo) / Costo</strong>
+        <br><br>
+        <strong>Margen = (Precio − Costo) / Precio</strong>
+      </div>
+
+      <div class="callout success">
+        <strong>Ejemplo:</strong>
+        costo S/100 y precio S/125 producen 25% de markup,
+        pero solamente 20% de margen.
+      </div>
+
+    </section>
+
+
+    <!-- B6 -->
+
+    <section class="section" id="b6">
+
+      <div class="section-number">Bloque 06</div>
+      <h2>Contabilidad financiera, gerencial y de costos</h2>
+
+      <div class="formula">
+        <strong>Activo = Pasivo + Patrimonio</strong>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Caja</td>
+              <td>S/200,000</td>
+            </tr>
+            <tr>
+              <td>Inventarios</td>
+              <td>S/300,000</td>
+            </tr>
+            <tr>
+              <td>Equipos</td>
+              <td>S/500,000</td>
+            </tr>
+            <tr>
+              <td><strong>Activo</strong></td>
+              <td><strong>S/1,000,000</strong></td>
+            </tr>
+            <tr>
+              <td>Deuda bancaria</td>
+              <td>S/400,000</td>
+            </tr>
+            <tr>
+              <td>Proveedores</td>
+              <td>S/200,000</td>
+            </tr>
+            <tr>
+              <td>Patrimonio</td>
+              <td>S/400,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Recuerda:</strong>
+        inventario es un activo, pero no es dinero disponible.
+      </div>
+
+    </section>
+
+
+    <!-- B7 -->
+
+    <section class="section" id="b7">
+
+      <div class="section-number">Bloque 07</div>
+      <h2>Finanzas corporativas, tesorería y estructura de costos</h2>
+
+      <div class="flow">
+        <span class="flow-item">Ventas</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Ventas netas</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">COGS</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Margen bruto</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">OPEX</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">EBITDA</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">EBIT</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">EBT</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Utilidad neta</span>
+      </div>
+
+      <div class="dashboard">
+        <div class="dash-card">
+          <div class="dash-label">Ventas netas</div>
+          <div class="dash-number">S/12.0M</div>
+          <div class="status green">Base</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Margen bruto</div>
+          <div class="dash-number">S/4.8M</div>
+          <div class="status green">40%</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">EBITDA</div>
+          <div class="dash-number">S/1.8M</div>
+          <div class="status green">15%</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Utilidad neta</div>
+          <div class="dash-number">S/803.7K</div>
+          <div class="status yellow">6.7%</div>
+        </div>
+      </div>
+
+      <div class="callout danger">
+        <strong>EBITDA ≠ caja.</strong>
+        Una empresa puede generar EBITDA y consumir efectivo por inventario,
+        cuentas por cobrar, CAPEX, deuda e impuestos.
+      </div>
+
+    </section>
+
+
+    <!-- B8 -->
+
+    <section class="section" id="b8">
+
+      <div class="section-number">Bloque 08</div>
+      <h2>Capital de trabajo y gestión de caja</h2>
+
+      <div class="flow">
+        <span class="flow-item">Compra</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Inventario</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Venta</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">CxC</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Cobranza</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Caja</span>
+      </div>
+
+      <div class="formula">
+        <strong>DSO = CxC / Ventas × 365</strong>
+        <br><br>
+        <strong>DIO = Inventario / COGS × 365</strong>
+        <br><br>
+        <strong>DPO = CxP / COGS × 365</strong>
+        <br><br>
+        <strong>CCC = DIO + DSO − DPO</strong>
+      </div>
+
+      <div class="callout">
+        Si DIO = 60, DSO = 45 y DPO = 30:
+        <strong>CCC = 75 días.</strong>
+      </div>
+
+    </section>
+
+
+    <!-- B9 -->
+
+    <section class="section" id="b9">
+
+      <div class="section-number">Bloque 09</div>
+      <h2>Presupuestos, forecast y control de gestión</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Presupuesto</th>
+              <th>Real</th>
+              <th>Variación</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ventas</td>
+              <td>S/10.0M</td>
+              <td>S/9.2M</td>
+              <td>−S/800K</td>
+              <td>−8%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>El análisis no termina en −8%.</strong>
+        Hay que explicar si la desviación proviene de volumen, precio,
+        mix, tipo de cambio, clientes, capacidad o ejecución comercial.
+      </div>
+
+    </section>
+
+
+    <!-- B10 -->
+
+    <section class="section" id="b10">
+
+      <div class="section-number">Bloque 10</div>
+      <h2>Logística, Supply Chain e inventarios</h2>
+
+      <div class="formula">
+        <strong>
+          Punto de pedido = demanda durante lead time + stock de seguridad
+        </strong>
+      </div>
+
+      <div class="callout">
+        Demanda diaria: 50 unidades · Lead time: 10 días ·
+        Seguridad: 150 unidades.
+        <br>
+        <strong>ROP = 50 × 10 + 150 = 650 unidades.</strong>
+      </div>
+
+      <h3>Herramientas tecnológicas</h3>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>ERP</h3>
+          <p>Integra compras, inventarios, ventas, contabilidad y finanzas.</p>
+        </div>
+        <div class="info-card">
+          <h3>WMS</h3>
+          <p>Administra operaciones y ubicaciones del almacén.</p>
+        </div>
+        <div class="info-card">
+          <h3>TMS</h3>
+          <p>Gestiona transporte, rutas y logística de distribución.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- B11 -->
+
+    <section class="section" id="b11">
+
+      <div class="section-number">Bloque 11</div>
+      <h2>Comercio exterior, importaciones y aduanas</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FOB</td>
+              <td>US$20,000</td>
+            </tr>
+            <tr>
+              <td>Flete</td>
+              <td>US$1,500</td>
+            </tr>
+            <tr>
+              <td>Seguro</td>
+              <td>US$100</td>
+            </tr>
+            <tr>
+              <td>CIF</td>
+              <td>US$21,600</td>
+            </tr>
+            <tr>
+              <td>Tipo de cambio hipotético</td>
+              <td>S/3.75</td>
+            </tr>
+            <tr>
+              <td>Valor en soles</td>
+              <td>S/81,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        El costo puesto en almacén debe considerar los componentes que
+        efectivamente correspondan a la operación, subpartida, régimen,
+        tributos y gastos logísticos.
+      </div>
+
+    </section>
+
+
+    <!-- B12 -->
+
+    <section class="section" id="b12">
+
+      <div class="section-number">Bloque 12</div>
+      <h2>Recursos humanos y costo laboral</h2>
+
+      <p class="lead">
+        El salario bruto no representa automáticamente el costo total de
+        contratar a una persona.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Ejemplo anual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sueldo base</td>
+              <td>S/36,000</td>
+            </tr>
+            <tr>
+              <td>EsSalud</td>
+              <td>S/3,240</td>
+            </tr>
+            <tr>
+              <td>Gratificaciones</td>
+              <td>S/6,000</td>
+            </tr>
+            <tr>
+              <td>Bonificación extraordinaria referencial</td>
+              <td>S/540</td>
+            </tr>
+            <tr>
+              <td>CTS aproximada</td>
+              <td>S/3,500</td>
+            </tr>
+            <tr>
+              <td>Vacaciones</td>
+              <td>S/3,000</td>
+            </tr>
+            <tr>
+              <td><strong>Costo aproximado</strong></td>
+              <td><strong>S/52,280</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="muted">
+        Ejemplo simplificado para gestión; la determinación real depende del
+        régimen laboral y de la naturaleza de las remuneraciones.
+      </p>
+
+    </section>
+
+
+    <!-- B13 -->
+
+    <section class="section" id="b13">
+
+      <div class="section-number">Bloque 13</div>
+      <h2>Tributación y SUNAT</h2>
+
+      <div class="callout">
+        <strong>Fecha de corte:</strong> 14 de agosto de 2026.
+        Las reglas tributarias deben verificarse antes de aplicarse a una
+        operación concreta.
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>IGV</h3>
+          <p>
+            Impuesto indirecto. Crédito fiscal y débito fiscal se determinan
+            conforme a las reglas aplicables.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Renta</h3>
+          <p>
+            Parte de la utilidad contable puede requerir ajustes tributarios
+            para determinar renta imponible.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Retenciones</h3>
+          <p>
+            Mecanismos de recaudación cuyo tratamiento depende de la operación.
+          </p>
+        </div>
+      </div>
+
+      <div class="formula">
+        <strong>
+          Renta contable ± ajustes tributarios = renta neta imponible
+        </strong>
+      </div>
+
+      <div class="formula">
+        <strong>
+          IGV por pagar = débito fiscal − crédito fiscal
+        </strong>
+      </div>
+
+      <div class="callout danger">
+        <strong>No confundir:</strong>
+        crédito fiscal de IGV ≠ gasto deducible para Impuesto a la Renta.
+      </div>
+
+    </section>
+
+
+    <!-- B14 -->
+
+    <section class="section" id="b14">
+
+      <div class="section-number">Bloque 14</div>
+      <h2>Fiscalización, auditoría y control interno</h2>
+
+      <div class="flow">
+        <span class="flow-item">Notificación</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Requerimiento</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Información</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Análisis</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Resultado</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Defensa</span>
+      </div>
+
+      <ul class="checklist">
+        <li>Conciliaciones bancarias actualizadas.</li>
+        <li>Inventarios sustentados.</li>
+        <li>Contratos disponibles.</li>
+        <li>Facturas y comprobantes organizados.</li>
+        <li>Declaraciones tributarias archivadas.</li>
+        <li>Importaciones documentadas.</li>
+        <li>Gastos con evidencia.</li>
+        <li>Activos fijos conciliados.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- B15 -->
+
+    <section class="section" id="b15">
+
+      <div class="section-number">Bloque 15</div>
+      <h2>Gestión integral de riesgos</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Riesgo</th>
+              <th>Prob.</th>
+              <th>Impacto</th>
+              <th>Nivel</th>
+              <th>Control</th>
+              <th>Responsable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tipo de cambio</td>
+              <td>Alta</td>
+              <td>Alta</td>
+              <td>Crítico</td>
+              <td>Cobertura</td>
+              <td>CFO</td>
+            </tr>
+            <tr>
+              <td>Incobrables</td>
+              <td>Media</td>
+              <td>Alta</td>
+              <td>Alto</td>
+              <td>Política crédito</td>
+              <td>CFO/Comercial</td>
+            </tr>
+            <tr>
+              <td>Ciberseguridad</td>
+              <td>Media</td>
+              <td>Alta</td>
+              <td>Alto</td>
+              <td>MFA/Backups</td>
+              <td>CIO</td>
+            </tr>
+            <tr>
+              <td>Proveedor único</td>
+              <td>Media</td>
+              <td>Alta</td>
+              <td>Alto</td>
+              <td>Dual sourcing</td>
+              <td>Supply</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">
+        <strong>Pérdida esperada ≈ probabilidad × impacto</strong>
+      </div>
+
+    </section>
+
+
+    <!-- B16 -->
+
+    <section class="section" id="b16">
+
+      <div class="section-number">Bloque 16</div>
+      <h2>Gestión pública, SIAF, SIGA y contrataciones</h2>
+
+      <div class="flow">
+        <span class="flow-item">Presupuesto</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Certificación</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Compromiso</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Devengado</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Girado</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Pagado</span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>SIAF</h3>
+          <p>Registra y administra información financiera pública.</p>
+        </div>
+        <div class="info-card">
+          <h3>SIGA</h3>
+          <p>Apoya la gestión logística, bienes, servicios y patrimonio.</p>
+        </div>
+        <div class="info-card">
+          <h3>SEACE</h3>
+          <p>Plataforma electrónica vinculada a las contrataciones públicas.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Empresa proveedora:</strong>
+        oportunidad → procedimiento → oferta → evaluación → adjudicación →
+        contrato → ejecución → conformidad → pago.
+      </div>
+
+    </section>
+
+
+    <!-- B17 -->
+
+    <section class="section" id="b17">
+
+      <div class="section-number">Bloque 17</div>
+      <h2>ERP, CRM, BI, automatización e inteligencia artificial</h2>
+
+      <div class="flow">
+        <span class="flow-item">Cuaderno</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Excel</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">ERP</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">BI</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Automatización</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">IA</span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>ERP</h3>
+          <p>Fuente integrada de transacciones empresariales.</p>
+        </div>
+        <div class="info-card">
+          <h3>CRM</h3>
+          <p>Gestiona clientes, oportunidades y pipeline comercial.</p>
+        </div>
+        <div class="info-card">
+          <h3>BI</h3>
+          <p>Convierte datos en información para decisiones.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Regla tecnológica:</strong>
+        primero estandariza el proceso; después automatízalo.
+      </div>
+
+    </section>
+
+
+    <!-- B18 -->
+
+    <section class="section" id="b18">
+
+      <div class="section-number">Bloque 18</div>
+      <h2>Banca, crédito empresarial y endeudamiento</h2>
+
+      <div class="formula">
+        <strong>
+          DSCR = flujo disponible para deuda / servicio de deuda
+        </strong>
+      </div>
+
+      <div class="callout success">
+        Si flujo disponible = S/1.5M y servicio de deuda = S/1.0M:
+        <strong>DSCR = 1.5x</strong>.
+      </div>
+
+      <h3>Lo que analiza un banco</h3>
+
+      <ul class="checklist">
+        <li>Estados financieros.</li>
+        <li>Flujo de caja.</li>
+        <li>EBITDA.</li>
+        <li>Deuda existente.</li>
+        <li>Historial crediticio.</li>
+        <li>Garantías.</li>
+        <li>Capacidad de pago.</li>
+        <li>Sector económico.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- B19 -->
+
+    <section class="section" id="b19">
+
+      <div class="section-number">Bloque 19</div>
+      <h2>Indicadores financieros y diagnóstico</h2>
+
+      <div class="dashboard">
+
+        <div class="dash-card">
+          <div class="dash-label">Margen bruto</div>
+          <div class="dash-number">40%</div>
+          <div class="status green">Fuerte</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Margen EBITDA</div>
+          <div class="dash-number">15%</div>
+          <div class="status green">Positivo</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Deuda / EBITDA</div>
+          <div class="dash-number">2.0x</div>
+          <div class="status yellow">Vigilar</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">CCC</div>
+          <div class="dash-number">75 días</div>
+          <div class="status yellow">Mejorar</div>
+        </div>
+
+      </div>
+
+      <div class="formula">
+        <strong>ROA = utilidad neta / activos</strong>
+        <br><br>
+        <strong>ROE = utilidad neta / patrimonio</strong>
+        <br><br>
+        <strong>Margen EBITDA = EBITDA / ventas</strong>
+      </div>
+
+    </section>
+
+
+    <!-- B20 -->
+
+    <section class="section" id="b20">
+
+      <div class="section-number">Bloque 20</div>
+      <h2>Evaluación de inversiones</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Flujo libre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>−S/1,000,000</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>S/280,000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>S/300,000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>S/330,000</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>S/360,000</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>S/400,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">
+        <strong>
+          VAN = Σ FCLt / (1 + WACC)<sup>t</sup> − inversión inicial
+        </strong>
+      </div>
+
+      <div class="callout success">
+        Con una tasa de descuento hipotética de 12%, el proyecto presenta
+        un VAN aproximado positivo y una TIR aproximada superior al WACC.
+      </div>
+
+    </section>
+
+
+    <!-- B21 -->
+
+    <section class="section" id="b21">
+
+      <div class="section-number">Bloque 21</div>
+      <h2>WACC y estructura financiera</h2>
+
+      <div class="formula">
+        <strong>
+          WACC = Ke(E/V) + Kd(1−T)(D/V)
+        </strong>
+      </div>
+
+      <div class="callout">
+        Ejemplo:
+        40% deuda + 60% patrimonio,
+        costo de deuda 10%,
+        costo de equity 16%,
+        impuesto 29.5%.
+        <br><br>
+        <strong>WACC ≈ 12.42%</strong>
+      </div>
+
+      <p>
+        Si un proyecto produce un retorno inferior al costo de capital,
+        puede destruir valor aunque produzca utilidad contable.
+      </p>
+
+    </section>
+
+
+    <!-- B22 -->
+
+    <section class="section" id="b22">
+
+      <div class="section-number">Bloque 22</div>
+      <h2>Mercado de capitales y bolsa</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Banco</h3>
+          <p>Intermediación financiera: la entidad presta recursos a la empresa.</p>
+        </div>
+        <div class="info-card">
+          <h3>Mercado de valores</h3>
+          <p>Financiamiento directo mediante valores ofrecidos a inversionistas.</p>
+        </div>
+        <div class="info-card">
+          <h3>Inversionista</h3>
+          <p>Entrega capital a cambio del retorno y riesgo del instrumento.</p>
+        </div>
+      </div>
+
+      <div class="flow">
+        <span class="flow-item">Empresa</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Emisión</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Inversionistas</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Capital</span>
+      </div>
+
+      <div class="callout">
+        El acceso al mercado de capitales exige preparación financiera,
+        información, gobierno, transparencia y cumplimiento regulatorio.
+      </div>
+
+    </section>
+
+
+    <!-- B23 -->
+
+    <section class="section" id="b23">
+
+      <div class="section-number">Bloque 23</div>
+      <h2>Valorización de empresas</h2>
+
+      <div class="formula">
+        <strong>
+          Enterprise Value = EBITDA × múltiplo
+        </strong>
+      </div>
+
+      <div class="callout">
+        EBITDA = S/2,000,000 · Múltiplo = 6x
+        <br>
+        <strong>EV = S/12,000,000</strong>
+      </div>
+
+      <div class="formula">
+        <strong>
+          Equity Value = EV − deuda + caja
+        </strong>
+      </div>
+
+      <p>
+        Si deuda = S/3M y caja = S/1M:
+      </p>
+
+      <div class="formula">
+        <strong>
+          Equity Value = S/12M − S/3M + S/1M = S/10M
+        </strong>
+      </div>
+
+    </section>
+
+
+    <!-- B24 -->
+
+    <section class="section" id="b24">
+
+      <div class="section-number">Bloque 24</div>
+      <h2>Startups, venture capital y private equity</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pre-money</td>
+              <td>S/4,000,000</td>
+            </tr>
+            <tr>
+              <td>Inversión</td>
+              <td>S/1,000,000</td>
+            </tr>
+            <tr>
+              <td>Post-money</td>
+              <td>S/5,000,000</td>
+            </tr>
+            <tr>
+              <td>Participación inversionista</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>Fundadores</td>
+              <td>80%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Dilución:</strong>
+        los fundadores pasan de 100% a 80%, pero reciben S/1M de capital
+        para financiar crecimiento.
+      </div>
+
+    </section>
+
+
+    <!-- B25 -->
+
+    <section class="section" id="b25">
+
+      <div class="section-number">Bloque 25</div>
+      <h2>Fusiones, adquisiciones y venta de empresas</h2>
+
+      <div class="flow">
+        <span class="flow-item">Preparación</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">NDA</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">LOI</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Due Diligence</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">SPA</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Cierre</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Integración</span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Financiera</h3>
+          <p>Ventas, EBITDA, deuda, caja, capital de trabajo y contingencias.</p>
+        </div>
+        <div class="info-card">
+          <h3>Legal</h3>
+          <p>Contratos, litigios, activos, licencias y obligaciones.</p>
+        </div>
+        <div class="info-card">
+          <h3>Comercial</h3>
+          <p>Clientes, concentración, churn, pipeline y pricing.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- B26 -->
+
+    <section class="section" id="b26">
+
+      <div class="section-number">Bloque 26</div>
+      <h2>Comercio, contratos y protección legal</h2>
+
+      <h3>Las preguntas de un contrato profesional</h3>
+
+      <ol class="number-list">
+        <li>¿Quiénes son las partes?</li>
+        <li>¿Cuál es el objeto?</li>
+        <li>¿Cuánto se paga?</li>
+        <li>¿Cuándo se entrega?</li>
+        <li>¿Cómo se acepta?</li>
+        <li>¿Qué ocurre si alguien incumple?</li>
+        <li>¿Cómo termina?</li>
+        <li>¿Cómo se resuelve una controversia?</li>
+      </ol>
+
+      <div class="callout">
+        Un contrato reduce incertidumbre jurídica, pero no sustituye
+        evaluación de contraparte, controles financieros ni gestión de riesgo.
+      </div>
+
+    </section>
+
+
+    <!-- B27 -->
+
+    <section class="section" id="b27">
+
+      <div class="section-number">Bloque 27</div>
+      <h2>Internacionalización y expansión</h2>
+
+      <div class="flow">
+        <span class="flow-item">Lima</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Perú</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">LatAm</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">Mercado global</span>
+      </div>
+
+      <ul class="checklist">
+        <li>Analizar tamaño y atractivo del mercado.</li>
+        <li>Evaluar competencia y pricing.</li>
+        <li>Revisar regulación local.</li>
+        <li>Definir Incoterms y logística.</li>
+        <li>Evaluar tipo de cambio.</li>
+        <li>Definir socios o distribuidores.</li>
+        <li>Analizar tributación internacional.</li>
+        <li>Proteger propiedad intelectual.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- EMPRESA X -->
+
+    <section class="section" id="empresa-x">
+
+      <div class="section-number">Bloque 28 · Caso transversal</div>
+      <h2>EMPRESA X: de S/0 a empresa profesionalizada</h2>
+
+      <p class="lead">
+        Una compañía peruana de importación y distribución de equipos
+        tecnológicos para clientes corporativos.
+      </p>
+
+      <div class="dashboard">
+
+        <div class="dash-card">
+          <div class="dash-label">Ventas</div>
+          <div class="dash-number">S/12M</div>
+          <div class="status green">Anual</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">COGS</div>
+          <div class="dash-number">S/7.2M</div>
+          <div class="status yellow">60%</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">EBITDA</div>
+          <div class="dash-number">S/1.8M</div>
+          <div class="status green">15%</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Utilidad neta</div>
+          <div class="dash-number">S/803.7K</div>
+          <div class="status green">6.7%</div>
+        </div>
+
+      </div>
+
+      <h3>Estado de resultados simplificado</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ventas netas</td>
+              <td>S/12,000,000</td>
+            </tr>
+            <tr>
+              <td>COGS</td>
+              <td>S/7,200,000</td>
+            </tr>
+            <tr>
+              <td>Margen bruto</td>
+              <td>S/4,800,000</td>
+            </tr>
+            <tr>
+              <td>OPEX</td>
+              <td>S/3,000,000</td>
+            </tr>
+            <tr>
+              <td>EBITDA</td>
+              <td>S/1,800,000</td>
+            </tr>
+            <tr>
+              <td>Depreciación/amortización</td>
+              <td>S/300,000</td>
+            </tr>
+            <tr>
+              <td>EBIT</td>
+              <td>S/1,500,000</td>
+            </tr>
+            <tr>
+              <td>Intereses</td>
+              <td>S/360,000</td>
+            </tr>
+            <tr>
+              <td>EBT</td>
+              <td>S/1,140,000</td>
+            </tr>
+            <tr>
+              <td>Impuesto referencial</td>
+              <td>S/336,300</td>
+            </tr>
+            <tr>
+              <td><strong>Utilidad neta</strong></td>
+              <td><strong>S/803,700</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Diagnóstico CFO</h3>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <div class="icon">✓</div>
+          <h3>Rentable</h3>
+          <p>
+            Presenta margen bruto y EBITDA positivos.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">!</div>
+          <h3>Caja</h3>
+          <p>
+            El crecimiento puede consumir efectivo mediante capital de trabajo.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">↗</div>
+          <h3>Financiable</h3>
+          <p>
+            Puede acceder a deuda si demuestra capacidad sostenible de pago.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="callout danger">
+        <strong>Conclusión:</strong>
+        Empresa X puede ser rentable y, simultáneamente, enfrentar tensión
+        de caja. El CFO debe administrar ambas dimensiones.
+      </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section class="section" id="dashboard">
+
+      <div class="section-number">Bloque 29</div>
+      <h2>Dashboard maestro del CEO/CFO</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Área</th>
+              <th>KPI</th>
+              <th>Resultado</th>
+              <th>Meta</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Ventas</td>
+              <td>Ventas netas</td>
+              <td>S/12.0M</td>
+              <td>S/12.5M</td>
+              <td>🟡</td>
+              <td>Pipeline</td>
+            </tr>
+            <tr>
+              <td>Margen</td>
+              <td>Margen bruto</td>
+              <td>40%</td>
+              <td>40%</td>
+              <td>🟢</td>
+              <td>Mantener</td>
+            </tr>
+            <tr>
+              <td>EBITDA</td>
+              <td>Margen EBITDA</td>
+              <td>15%</td>
+              <td>16%</td>
+              <td>🟡</td>
+              <td>Revisar OPEX</td>
+            </tr>
+            <tr>
+              <td>Caja</td>
+              <td>FCF</td>
+              <td>Negativo</td>
+              <td>Positivo</td>
+              <td>🔴</td>
+              <td>Liberar capital</td>
+            </tr>
+            <tr>
+              <td>Deuda</td>
+              <td>Deuda/EBITDA</td>
+              <td>2.0x</td>
+              <td>&lt;2.5x</td>
+              <td>🟢</td>
+              <td>Controlar</td>
+            </tr>
+            <tr>
+              <td>Inventario</td>
+              <td>DIO</td>
+              <td>60 días</td>
+              <td>50 días</td>
+              <td>🟡</td>
+              <td>Reducir lentos</td>
+            </tr>
+            <tr>
+              <td>Cobranza</td>
+              <td>DSO</td>
+              <td>45 días</td>
+              <td>35 días</td>
+              <td>🟡</td>
+              <td>Cobranza</td>
+            </tr>
+            <tr>
+              <td>Riesgos</td>
+              <td>Críticos</td>
+              <td>3</td>
+              <td>0–1</td>
+              <td>🔴</td>
+              <td>Mitigar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Lectura en 15 minutos:</strong>
+        primero ventas y margen; después EBITDA y caja; luego deuda y capital
+        de trabajo; finalmente riesgos y cumplimiento.
+      </div>
+
+    </section>
+
+
+    <!-- CUMPLIMIENTO -->
+
+    <section class="section" id="cumplimiento">
+
+      <div class="section-number">Bloque 30</div>
+      <h2>Sistema maestro de cumplimiento</h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>Legal</h3>
+          <p>
+            Contratos, poderes, propiedad intelectual y licencias.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Tributario</h3>
+          <p>
+            RUC, declaraciones, pagos, libros y sustento.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Contable</h3>
+          <p>
+            Conciliaciones, inventarios, CxC, CxP y cierres.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Laboral</h3>
+          <p>
+            Planilla, beneficios, SST y obligaciones.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Financiero</h3>
+          <p>
+            Caja, deuda, presupuesto, forecast y capital de trabajo.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Tecnológico</h3>
+          <p>
+            MFA, backups, accesos y continuidad.
+          </p>
+        </div>
+
+      </div>
+
+      <ul class="checklist">
+        <li>Empresa correctamente constituida.</li>
+        <li>Poderes actualizados.</li>
+        <li>Contratos críticos revisados.</li>
+        <li>Declaraciones tributarias presentadas.</li>
+        <li>Impuestos pagados.</li>
+        <li>Conciliaciones bancarias realizadas.</li>
+        <li>Inventario físico controlado.</li>
+        <li>Planilla y beneficios laborales controlados.</li>
+        <li>Flujo de caja actualizado.</li>
+        <li>Deuda controlada.</li>
+        <li>Backups realizados.</li>
+        <li>MFA activo.</li>
+        <li>Actas societarias actualizadas.</li>
+        <li>Matriz de riesgos revisada.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- REGLAS -->
+
+    <section class="section" id="reglas">
+
+      <div class="section-number">Bloque 31</div>
+      <h2>Las 25 reglas de oro del empresario</h2>
+
+      <div class="gold-rules">
+
+        <div class="rule">
+          <div class="rule-number">01</div>
+          <h3>Protege la caja</h3>
+          <p>La utilidad no paga facturas; el efectivo sí.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">02</div>
+          <h3>Conoce tu margen</h3>
+          <p>Ventas sin margen pueden destruir valor.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">03</div>
+          <h3>Margen ≠ markup</h3>
+          <p>Usa siempre la base correcta para cada porcentaje.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">04</div>
+          <h3>Controla la deuda</h3>
+          <p>El endeudamiento debe estar respaldado por caja.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">05</div>
+          <h3>Cumple impuestos</h3>
+          <p>El orden tributario protege la continuidad.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">06</div>
+          <h3>No manipules la contabilidad</h3>
+          <p>La información financiera debe ser confiable.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">07</div>
+          <h3>Contrata correctamente</h3>
+          <p>Las personas son activos, pero también obligaciones.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">08</div>
+          <h3>Controla inventarios</h3>
+          <p>Inventario excesivo es capital inmovilizado.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">09</div>
+          <h3>Cobra antes</h3>
+          <p>Financiar clientes consume capital de trabajo.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">10</div>
+          <h3>Negocia proveedores</h3>
+          <p>Los plazos impactan directamente la caja.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">11</div>
+          <h3>Mide riesgos</h3>
+          <p>Lo que no se identifica difícilmente se controla.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">12</div>
+          <h3>Audita controles</h3>
+          <p>Un procedimiento escrito no garantiza que funcione.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">13</div>
+          <h3>Automatiza lo repetitivo</h3>
+          <p>Primero diseña el proceso; luego automatízalo.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">14</div>
+          <h3>Protege los datos</h3>
+          <p>MFA, backups y mínimos privilegios son fundamentales.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">15</div>
+          <h3>Separa propiedad de gestión</h3>
+          <p>Ser accionista no equivale a saber administrar.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">16</div>
+          <h3>Controla capital de trabajo</h3>
+          <p>Crecer puede consumir más caja de la que genera.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">17</div>
+          <h3>Escala economía positiva</h3>
+          <p>No escales pérdidas esperando que se arreglen solas.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">18</div>
+          <h3>Invierte con VAN</h3>
+          <p>El retorno debe compensar el costo del capital y el riesgo.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">19</div>
+          <h3>Conoce tu valor</h3>
+          <p>Valora la empresa antes de negociar con terceros.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">20</div>
+          <h3>Usa la banca estratégicamente</h3>
+          <p>La deuda debe financiar necesidades productivas.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">21</div>
+          <h3>Prepárate para capitales</h3>
+          <p>Transparencia y gobierno son condiciones esenciales.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">22</div>
+          <h3>Elige bien a tus socios</h3>
+          <p>Un mal socio puede destruir valor durante años.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">23</div>
+          <h3>El cumplimiento es un activo</h3>
+          <p>El orden facilita financiación, auditoría y M&A.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">24</div>
+          <h3>Practica transparencia</h3>
+          <p>La información confiable reduce incertidumbre.</p>
+        </div>
+
+        <div class="rule">
+          <div class="rule-number">25</div>
+          <h3>Protege el patrimonio</h3>
+          <p>Separa patrimonios, controla riesgos y documenta operaciones.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PLAN CEO -->
+
+    <section class="section" id="ceo">
+
+      <div class="section-number">Plan ejecutivo</div>
+      <h2>Si mañana fuera CEO de esta empresa</h2>
+
+      <p class="lead">
+        El objetivo del primer año no es aparentar profesionalización.
+        Es construir una empresa que pueda demostrar sus números,
+        controlar sus riesgos y crecer sin perder el control.
+      </p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h3>Día 1 — Conocer la realidad</h3>
+          <p>
+            Revisar bancos, deuda, cuentas por cobrar, cuentas por pagar,
+            inventario, impuestos, planilla, contratos, clientes,
+            proveedores y flujo de caja de 13 semanas.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Día 7 — Detener fugas</h3>
+          <p>
+            Analizar margen por producto y cliente, inventario lento,
+            cobranza, gastos, proveedores y riesgos críticos.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Día 30 — Profesionalizar</h3>
+          <p>
+            Implementar cierre mensual, presupuesto, forecast, CRM,
+            políticas de crédito, compras, tesorería, autorizaciones
+            y KPIs.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Día 90 — Hacerla financiable</h3>
+          <p>
+            Construir estados financieros confiables, data room,
+            reporting ejecutivo, controles internos y documentación
+            corporativa.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Año 1 — Escalar con disciplina</h3>
+          <p>
+            Mejorar margen, caja, productividad, tecnología y gobierno;
+            optimizar deuda; evaluar CAPEX y preparar la empresa para
+            bancos e inversionistas.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="callout success">
+        <strong>Pregunta final del CEO:</strong>
+        ¿podría entregar mañana toda la información crítica de la empresa
+        a un banco, auditor o inversionista sin tener que reconstruirla?
+      </div>
+
+    </section>
+
+
+    <!-- CIERRE -->
+
+    <section class="section">
+
+      <div class="section-number">Principio final</div>
+
+      <h2>
+        La empresa profesional es aquella que puede crecer
+        sin perder el control.
+      </h2>
+
+      <p class="lead">
+        Ventas generan ingresos. El margen genera rentabilidad.
+        El capital de trabajo determina cuánto efectivo queda atrapado.
+        La tesorería protege la liquidez. El gobierno reduce riesgos.
+        La tecnología aumenta productividad. El capital financia crecimiento.
+        Y la combinación de todo ello determina el valor empresarial.
+      </p>
+
+      <div class="formula">
+        <strong>
+          Estrategia → Ventas → Margen → EBITDA → Capital de trabajo
+          → Caja → Riesgo → Capital → WACC → Valor
+        </strong>
+      </div>
+
+      <div class="callout">
+        <strong>La pregunta más importante no es “¿cuánto vendimos?”.</strong>
+        <br><br>
+        Es:
+        <strong>
+          “¿Cuánto valor sostenible estamos creando y cuánto efectivo
+          podemos convertir de ese valor en el tiempo?”
+        </strong>
+      </div>
+
+    </section>
+
+  </article>
+</div>
+```
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+```
+<div class="footer-inner">
+
+  <div>
+    <div class="brand">
+      <div class="brand-mark">Σ</div>
+      <div>
+        <strong>ENCICLOPEDIA SUPREMA</strong>
+        <span>Negocios & Finanzas</span>
+      </div>
+    </div>
+
+    <p style="margin-top:18px;">
+      Manual integral de negocios, finanzas, gestión, tributación,
+      operaciones, inversión y gobierno corporativo.
+    </p>
+  </div>
+
+  <div>
+    <h3>Áreas</h3>
+    <ul>
+      <li>Finanzas corporativas</li>
+      <li>Contabilidad</li>
+      <li>Tributación</li>
+      <li>Supply Chain</li>
+      <li>Mercado de capitales</li>
+      <li>Valorización</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Perspectivas</h3>
+    <ul>
+      <li>Emprendedor</li>
+      <li>CEO</li>
+      <li>CFO</li>
+      <li>Inversionista</li>
+      <li>Directorio</li>
+      <li>Gestión pública</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="copyright">
+  © 2026 Enciclopedia Suprema de Negocios y Finanzas ·
+  Edición educativa con enfoque empresarial peruano.
+</div>
+```
+
+  </footer>
+
+  <!-- BOTÓN ARRIBA -->
+
+  <button class="back-top" id="backTop" aria-label="Volver arriba">
+    ↑
+  </button>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navLinks = document.getElementById("navLinks");
+    const backTop = document.getElementById("backTop");
+    const searchInput = document.getElementById("searchInput");
+    const toc = document.getElementById("toc");
+
+    mobileToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll("a[href^='#']").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 500) {
+        backTop.classList.add("visible");
+      } else {
+        backTop.classList.remove("visible");
+      }
+    });
+
+    backTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase().trim();
+      const items = toc.querySelectorAll("li");
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? "" : "none";
+      });
+    });
+
+    const sections = document.querySelectorAll(".section[id]");
+    const tocLinks = document.querySelectorAll(".toc a");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove("active"));
+
+            const active = document.querySelector(
+              `.toc a[href="#${entry.target.id}"]`
+            );
+
+            if (active) {
+              active.classList.add("active");
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-15% 0px -70% 0px"
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
